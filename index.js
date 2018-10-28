@@ -16,8 +16,8 @@ httpServer.listen( config.httpPort,
  );
 
  httpsOptions = {
-     'key' : fs.readFileSync('./https/key.pem'),
-     'cert' :  fs.readFileSync('./https/cert.pem')
+    //  'key' : fs.readFileSync('./https/key.pem'),
+    //  'cert' :  fs.readFileSync('./https/cert.pem')
  };
 var httpsServer = https.createServer( httpsOptions,function ( req, res ){
     unifiedServer( req, res );
