@@ -4,8 +4,21 @@ const url = require('url');
 const sd = require('string_decoder').StringDecoder;
 const fs = require('fs');
 
+var _data = require('./lib/data');
 const config = require('./config');
-// The serverr should resp
+
+// Testing
+// @Todo delete
+
+_data.delete('test', 'newfile', function(err, data) {
+    if (!err && data ){
+        console.log( 'data' , data );
+    }
+    else {
+        console.log("error :" , err);
+    }
+});
+// The server should resp
 
 var httpServer = http.createServer( function ( req, res ){
     unifiedServer( req, res );
