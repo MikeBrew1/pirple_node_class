@@ -4,8 +4,8 @@ environments = {} ;
 
 // staging
 environments.staging = {
-    'httPort' : 4444,
-    'httpsPoert' : 4445,
+    'httpPort' : 4444,
+    'httpsPort' : 4445,
     'envName' : ' staging'
 };
 
