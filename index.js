@@ -10,14 +10,25 @@ const config = require('./config');
 // Testing
 // @Todo delete
 
-_data.delete('test', 'newfile', function(err, data) {
-    if (!err && data ){
-        console.log( 'data' , data );
-    }
+_data .create('test', 'newfile', { 'foo' : 'bar' }, function(err){
+    console.log( 'error with creating file ', err)
+}
+)
+
+_data.read('test', 'newfile', function( err, data ){
+    if( err) console.log('error reading file')
     else {
-        console.log("error :" , err);
+        console.log( 'data ' + data.afdsfas );
     }
-});
+})
+// _data.delete('test', 'newfile', function(err, data) {
+//     if (!err && data ){
+//         console.log( 'data' , data );
+//     }
+//     else {
+//         console.log("error :" , err);
+//     }
+// });
 // The server should resp
 
 var httpServer = http.createServer( function ( req, res ){
@@ -61,7 +72,7 @@ var unifiedServer = function(req , res){
     req.on('end', function() {
         buffer += decoder.end();
 
-        // choose the handler for request - defulat to notfound
+        // choose the handler for request - defualt to notfound
 
         var choosenhandler = typeof(router[trimmedPath]) !== 'undefined' ? router[trimmedPath] : handlers.notfound;
 

@@ -19,10 +19,10 @@ environments.production = {
 
 // set the environement
 
-var currentEnvironmant = typeof(process.env.NODE_ENV ) == 'string' ? process.env.NODE_ENV.toLowerCase() : '';
+var currentEnvironment = typeof(process.env.NODE_ENV ) == 'string' ? process.env.NODE_ENV.toLowerCase() : '';
 
-console.log('current ' + currentEnvironmant + ' p = ' + process.env.NODE_ENV + ' typeof ' + typeof process.env.NODE_ENV);
+console.log('current ' + currentEnvironment + ' p = ' + process.env.NODE_ENV + ' typeof ' + typeof process.env.NODE_ENV);
 
-var envionmentToExport = typeof(environments[currentEnvironmant]) == 'object' ? environments[currentEnvironmant] : environments.staging;
+var environmentToExport = typeof(environments[currentEnvironment]) == 'object' ? environments[currentEnvironment] : environments.staging;
 
-module.exports = envionmentToExport;
+module.exports = environmentToExport;
